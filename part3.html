@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+	<head>
+		<script language="javascript">
+			function check() {
+				first_check = document.getElementById("box1").checked;
+				second_check = document.getElementById("box2").checked;
+				third_check = document.getElementById("box3").checked;
+				fourth_check = document.getElementById("box4").checked;
+			
+				if (document.getElementById("all").checked) { 
+	                    document.getElementById("newTxt").innerHTML = "<input type='checkbox' name='all' id='all' onclick='check()' checked>Uncheck All<br><input type='checkbox' name='box1' id='box1' checked> Check 1<br><input type='checkbox' name='box2' id='box2' checked> Check 2<br><input type='checkbox' name='box3' id='box3' checked> Check 3<br><input type='checkbox' name='box4' id='box4' checked> Check 4<br>"
+	            } if (!document.getElementById("all").checked) {
+	                    document.getElementById("newTxt").innerHTML = "<input type='checkbox' name='all' id='all' onclick='check()'> Check All<br><input type='checkbox' name='box1' id='box1'> Check 1<br><input type='checkbox' name='box2' id='box2'> Check 2<br><input type='checkbox' name='box3' id='box3'> Check 3<br><input type='checkbox' name='box4' id='box4'> Check 4<br>"
+	            }
+            }
+		</script>
+	</head>
+	<body>
+		<h1 style = "text-align: center">Assignment 7 Part 3</h1>
+		<form>
+            <div id="newTxt", name="newTxt">
+                <input type="checkbox" name="all" id="all" onclick="check()"> Check All<br>
+                <input type="checkbox" name="box1" id="box1"> Check 1<br>
+                <input type="checkbox" name="box2" id="box2"> Check 2<br>
+                <input type="checkbox" name="box3" id="box3"> Check 3<br>
+                <input type="checkbox" name="box4" id="box4"> Check 4<br>
+            </div>
+        </form> 
+</html>
