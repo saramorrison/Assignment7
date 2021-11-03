@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+	<head>
+		<script language="javascript">
+            function jump(){
+                left_text = document.getElementById("left").value;
+                right_text = document.getElementById("right").value;
+                buttonTxt = document.getElementById("right").value;
+                if (right_text == "") {
+                    button = "<JUMP" 
+                } if (left_text == "") {
+                    button = "JUMP>" 
+                }
+               
+                document.getElementById("newTxt").innerHTML = "<input type 'text' id='left' name='left' value=" + right_text + "><input type='button' id='button' name='button' onclick='jump()' value = " + button + "><input type 'text' id='right' name='right' value="+left_text+">"
+            }
+        </script>
+	</head>
+	<body>
+		<h1 style="text-align: center">Assignment 7 Part 2</h1>
+		<br>
+		<form>
+            <div id="newTxt", name="newTxt">
+                <input type='text' id='left' name='left' value="">
+                <input type="button" id="button" onclick="jump()" value = "JUMP>">
+                <input type='text' id='right' name='right' value="">
+            </div>
+        </form>
+    </body>	
+</html>
