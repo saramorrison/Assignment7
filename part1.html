@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+
+<body background="hotdog.jpg">
+	<h1 style="text-align:center" position=fixed>WELCOME TO JOE'S HOTDOGS!!</h1>
+	<br>
+	<script language="javascript">
+		function calculate_price() {
+			hotdogs = parseInt(document.getElementById("hotdogs").value);
+			fries = parseInt(document.getElementById("fries").value);
+			drinks = parseInt(document.getElementById("drinks").value);
+
+			if (hotdogs == 0 && fries == 0 && drinks == 0) {
+				alert("You must order at least one item.")
+				return;
+			}
+
+			var price = (hotdogs * 3.75) + (fries * 2.00) + (drinks * 1.50);
+
+			if (price > 20.01) {
+				var total_price = (price * .9);
+				var discount = (price * .1);
+				discount = discount.toFixed(2);
+			} else {
+				total_price = price;
+				var discount = 0.00;
+			}
+			total_price = total_price.toFixed(2);
+			var total_price_after_tax = (total_price * 1.0625);
+			var tax = total_price_after_tax - total_price;
+			tax = tax.toFixed(2);
+			total_price_after_tax = total_price_after_tax.toFixed(2);
+			alert("You ordered: " + hotdogs + " hotdogs, " + fries + " french fries, and " + drinks + " drinks for a total price of $" + total_price_after_tax + ". The price before tax was $" + total_price + ". The tax you paid was $" + tax + ". The discount you received was $" + discount + ". ");
+
+		}
+	</script>
+	<body style="text-align:center">
+		<h2>Submit your order below:</h2> 
+		<form>
+		<h3>Hotdogs: $3.75 </h3>
+		<label for="hotdogs">How many hotdogs?:</label>
+		<select id="hotdogs" name="hotdogs">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="10">10</option>
+			<option value="15">15</option>
+			<option value="20">20</option>
+		</select><br><br>
+		<h3>French Fries: $2.00</h3>
+		<label for="fries">How many french fries?:</label>
+		<select id="fries" name="fries">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="10">10</option>
+			<option value="15">15</option>
+			<option value="20">20</option>
+		</select><br><br>
+		<h3>Drinks: $1.50 </h3>
+		<label for="drinks">How many drinks?:</label>
+		<select id="drinks" name="drinks">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="10">10</option>
+			<option value="15">15</option>
+			<option value="20">20</option>
+		</select>
+		<br><br><br>
+		<input type="button" id="button" onclick="calculate_price()" value = "Submit order">
+		</form>
+		<br>
+	</body>	
+</html>
